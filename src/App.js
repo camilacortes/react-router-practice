@@ -8,11 +8,20 @@ import {Switch, Route, Link} from "react-router-dom"
 function App() {
   return (
     <div>
-    <nav className="Navigation">
-      <Link to="/"><Home/></Link>
-      <Link to="/About"><About/></Link>
-      <Link to="/Services"><Services/></Link>
+    <nav className="navigation">
+      <ul>
+      <Link className="links" to="/">Home</Link>
+      <Link className="links" to="/About">About</Link>
+      <Link className="links" to="/Services">Services</Link>
+      </ul>
     </nav>
+
+    <Switch>
+      <Route exact path="/">{Home}</Route>
+      <Route path="/About">{About}</Route>
+      <Route path="/Services">{Services}</Route>
+    </Switch>
+
     </div>
   );
 }
